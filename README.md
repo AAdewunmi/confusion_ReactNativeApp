@@ -8,5 +8,8 @@ To Run (*):
 
 2. Start project in your terminal using yarn start, npm start or expo start.
 
+3. Install and run expo (**) on your mobile device to view the app.
+
 (*) Project will run in development mode because it is Work In Progress :)
+(**) Download from googleplay / apple store 
 
