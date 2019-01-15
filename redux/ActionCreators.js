@@ -155,3 +155,31 @@ export const addFavorite = (dishId) => ({
     type: ActionTypes.ADD_FAVORITE,
     payload: dishId
 });
+
+export const addComment = (comment) => ({
+    type: ActionTypes.ADD_COMMENT,
+    payload: comment
+});
+
+export const postComment = (dishId, rating, author, comment) => (dispatch) => {         
+    fetch(baseUrl + 'comments')
+        .then(response => {
+            if(response.ok){
+                return response;
+            } 
+        })
+        .then(response => response.json())
+        .then(response => {
+            setTimeout(() => {   
+                var newComment = {
+                    dishId: dishId,
+                    rating: rating,
+                    author: author,
+                    comment: comment,
+                    date: new Date().toISOString(),
+                    id: response.length-1
+                };         
+                dispatch(addComment(newComment));    
+            }, 2000);
+        });    
+};
