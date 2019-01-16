@@ -5,6 +5,7 @@ import { Card } from 'react-native-elements';
 import { connect } from 'react-redux';
 import { baseUrl } from '../shared/baseUrl';
 import { Loading } from './LoadingComponent';
+import * as Animatable from 'react-native-animatable';
 
 const mapStateToProps = state => {
     return {
@@ -69,19 +70,23 @@ class About extends Component{
         else if (this.props.leaders.errMess) {
             return(
                 <ScrollView>
+                <Animatable.View animation="fadeInDown" duration={2000} delay={1000}>
                     <History />
                     <Card
                         title='Corporate Leadership'>
                         <Text>{this.props.leaders.errMess}</Text>
                     </Card>
+                </Animatable.View>
                 </ScrollView>
             );
         }
         else {
             return(
             <ScrollView>
+                <Animatable.View animation="fadeInDown" duration={2000} delay={1000}>
                 <History />
                 <Leadership leaders = {this.props.leaders.leaders} />
+                </Animatable.View>
             </ScrollView>
         ); 
         }
