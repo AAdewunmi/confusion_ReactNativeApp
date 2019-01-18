@@ -39,7 +39,7 @@ function RenderDish(props) {
         onStartShouldSetPanResponder: (e, gestureState) => {
             return true;
         },
-         onPanResponderGrant: () => {this.view.rubberBand(1000).then(endState => console.log(endState.finished ? 'finished' : 'cancelled'));},
+        onPanResponderGrant: () => {this.view.rubberBand(1000).then(endState => console.log(endState.finished ? 'finished' : 'cancelled'));},
         onPanResponderEnd: (e, gestureState) => {
             console.log("pan responder end", gestureState);
             if (recognizeDrag(gestureState))
