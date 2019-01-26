@@ -31,23 +31,22 @@ const mapDispatchToProps = dispatch => ({
 })
 
 const LoginNavigator = createStackNavigator({
-        Login : { screen: Login },
-    },
-    {
-      navigationOptions: ({ navigation }) => ({
+      Login: Login
+    }, {
+    navigationOptions: ({ navigation }) => ({
       headerStyle: {
           backgroundColor: "#512DA8"
       },
-      headerTintColor: "#fff",
       headerTitleStyle: {
           color: "#fff"            
       },
+      title: 'Login',
+      headerTintColor: "#fff",
       headerLeft: <Icon name="menu" size={24}
-            color='white'
-            onPress={ () => navigation.toggleDrawer() } />
-       
+        iconStyle={{ color: 'white' }} 
+        onPress={ () => navigation.toggleDrawer() } />    
     })
-});
+  });
 
 const HomeNavigator = createStackNavigator({
         Home : { screen: Home },
